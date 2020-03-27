@@ -1,7 +1,5 @@
 package com.featuresvote.domain;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
