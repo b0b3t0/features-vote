@@ -1,4 +1,4 @@
-package com.featuresvote.security;
+package com.featuresvote.domain.dtos;
 
 import com.featuresvote.domain.Authority;
 import com.featuresvote.domain.User;
