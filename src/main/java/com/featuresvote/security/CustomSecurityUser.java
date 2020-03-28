@@ -1,5 +1,6 @@
 package com.featuresvote.security;
 
+import com.featuresvote.domain.Authority;
 import com.featuresvote.domain.User;
 import org.springframework.security.core.userdetails.UserDetails;
 

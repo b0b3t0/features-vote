@@ -1,7 +1,5 @@
 package com.featuresvote.domain;
 
-import com.featuresvote.security.Authority;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;

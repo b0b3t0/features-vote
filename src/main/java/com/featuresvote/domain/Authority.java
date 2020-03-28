@@ -1,4 +1,4 @@
-package com.featuresvote.security;
+package com.featuresvote.domain;
 
 import com.featuresvote.domain.User;
 import org.springframework.security.core.GrantedAuthority;
