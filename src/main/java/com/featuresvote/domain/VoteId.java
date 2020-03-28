@@ -12,6 +12,7 @@ public class VoteId implements Serializable {
     public VoteId() {
 
     }
+
     @ManyToOne
     public User getUser() {
         return user;
@@ -20,6 +21,7 @@ public class VoteId implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
     @ManyToOne
     public Feature getFeature() {
         return feature;

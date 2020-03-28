@@ -13,6 +13,7 @@ public class Comment {
     public Comment() {
 
     }
+
     @EmbeddedId
     public CommentId getPk() {
         return pk;
@@ -21,6 +22,7 @@ public class Comment {
     public void setPk(CommentId pk) {
         this.pk = pk;
     }
+
     @Column(name = "text", length = 500)
     public String getText() {
         return text;

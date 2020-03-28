@@ -14,6 +14,7 @@ public class Feature {
     public Feature() {
 
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "feature_id", nullable = false, unique = true)

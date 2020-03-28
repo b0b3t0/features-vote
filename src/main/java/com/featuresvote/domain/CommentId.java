@@ -14,6 +14,7 @@ public class CommentId implements Serializable {
     public CommentId() {
 
     }
+
     @ManyToOne
     public User getUser() {
         return user;
@@ -22,6 +23,7 @@ public class CommentId implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
     @ManyToOne
     public Feature getFeature() {
         return feature;
