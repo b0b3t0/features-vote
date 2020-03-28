@@ -1,6 +1,7 @@
 package com.featuresvote.web.services;
 
 import com.featuresvote.domain.User;
+import com.featuresvote.security.CustomSecurityUser;
 import com.featuresvote.web.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +23,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         if (user == null) {
             throw new UsernameNotFoundException("Invalid username.");
-            
+
         }
+
+        return new CustomSecurityUser(user);
     }
 }
