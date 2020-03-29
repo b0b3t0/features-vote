@@ -18,32 +18,34 @@
     </script>
 </head>
 <body>
+<div class="container">
     <form action="" method="post">
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-        <fieldset>
-            <legend>Please Login</legend>
-            <div th:if="${param.error != null}">
-                    Failed to login.
-                    <div th:if="${SPRING_SECURITY_LAST_EXCEPTION != null}">
-                        Reason: <span th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
-                    </div>
-            </div>
-            <div th:if="${param.logout != null}">
-                    You have been logged out.
-            </div>
-            <p>
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" />
-            </p>
-            <p>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" />
-            </p>
-            <div>
-                <button type="submit" class="btn">Log in</button>
-                <button type="button" class="btn" id="createAccount">Create Account</button>
-            </div>
-        </fieldset>
-    </form>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <fieldset>
+                <legend>Please Login</legend>
+                <div th:if="${param.error != null}">
+                        Failed to login.
+                        <div th:if="${SPRING_SECURITY_LAST_EXCEPTION != null}">
+                            Reason: <span th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
+                        </div>
+                </div>
+                <div th:if="${param.logout != null}">
+                        You have been logged out.
+                </div>
+                <p>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" />
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" />
+                </p>
+                <div>
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <button type="button" class="btn btn-info" id="createAccount">Create Account</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>
