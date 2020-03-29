@@ -8,10 +8,10 @@
     <h1>Register An Account</h1>
 
     <form action="" method="post">
-        Name:<input type="text" /><br/>
-        Username:<input type="text" /><br/>
-        Password:<input type="password" /><br/>
-        Confirm Password:<input type="password" /><br/><br/>
+        Name:<input type="text" th:field="${user.name}"/><br/>
+        Username:<input type="text" th:field="${user.username}"/><br/>
+        Password:<input type="password" th:field="${user.password}"/><br/>
+        Confirm Password:<input type="password" id="confirmPassword"/><br/><br/>
         <button type="submit">Create Account</button>
     </form>
 </body>
