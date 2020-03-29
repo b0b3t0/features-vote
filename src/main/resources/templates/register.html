@@ -5,6 +5,17 @@
     <title>Features-Vote Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function () {
+           $("#backButton").click(function () {
+               window.location.href = '/login';
+           })
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -22,24 +33,23 @@
                 <div class="form-group row">
                     <label for="username" class="col-md-2 col-form-label">Username:</label>
                     <div class="col-md-10">
-                           <input type="text" class="form-control" id="username" th:field="${user.username}"/>
+                        <input type="text" class="form-control" id="username" th:field="${user.username}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="password" class="col-md-2 col-form-label">Password:</label>
                     <div class="col-md-10">
-                    <input type="password" class="form-control" id="password" th:field="${user.password}"/>
+                        <input type="password" class="form-control" id="password" th:field="${user.password}"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="confirmPassword" class="col-md-2 col-form-label">Confirm Password:</label>
                     <div class="col-md-10">
-                    <input type="password" class="form-control" id="confirmPassword"/>
+                        <input type="password" class="form-control" id="confirmPassword"/>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <button type="submit" class="btn btn-primary">Create Account</button>
-                </div>
+                <button type="submit" class="btn btn-lg btn-info" id="backButton">Back</button>
+                <button type="submit" class="btn btn-lg btn-primary float-right">Create Account</button>
             </form>
         </div>
     </div>
