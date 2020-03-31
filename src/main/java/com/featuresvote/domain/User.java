@@ -12,6 +12,7 @@ public class User {
     private String username;
     private String password;
     private String name;
+    private Set<Product> products = new HashSet<>();
     private Set<Authority> authorities = new HashSet<>();
 
     public User() {
@@ -61,5 +62,14 @@ public class User {
 
     public void setAuthorities(Set<Authority> authorities) {
         this.authorities = authorities;
+    }
+
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "user")
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 }

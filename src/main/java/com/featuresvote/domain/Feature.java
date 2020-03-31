@@ -10,6 +10,7 @@ public class Feature {
     private String tittle;
     private String description;
     private String status;
+    private Product product;
 
     public Feature() {
 
@@ -48,5 +49,14 @@ public class Feature {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @ManyToOne
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }
