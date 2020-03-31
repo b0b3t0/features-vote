@@ -1,8 +1,8 @@
-package com.featuresvote.web.services;
+package com.featuresvote.services;
 
 import com.featuresvote.domain.User;
 import com.featuresvote.domain.dtos.CustomSecurityUser;
-import com.featuresvote.web.repositories.UserRepository;
+import com.featuresvote.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

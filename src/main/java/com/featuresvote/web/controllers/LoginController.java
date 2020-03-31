@@ -1,7 +1,7 @@
 package com.featuresvote.web.controllers;
 
 import com.featuresvote.domain.User;
-import com.featuresvote.web.services.UserService;
+import com.featuresvote.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

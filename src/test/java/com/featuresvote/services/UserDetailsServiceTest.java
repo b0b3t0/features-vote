@@ -1,4 +1,4 @@
-package com.featuresvote.web.services;
+package com.featuresvote.services;
 
 import org.junit.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

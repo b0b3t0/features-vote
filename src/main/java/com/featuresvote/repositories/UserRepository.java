@@ -1,4 +1,4 @@
-package com.featuresvote.web.repositories;
+package com.featuresvote.repositories;
 
 import com.featuresvote.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
