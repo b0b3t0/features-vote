@@ -11,6 +11,7 @@ public class Product {
     private String name;
     private User user;
     private Set<Feature> features = new HashSet<>();
+    private Boolean published;
 
     public Product() {
 
@@ -50,5 +51,13 @@ public class Product {
 
     public void setFeatures(Set<Feature> features) {
         this.features = features;
+    }
+
+    public Boolean getPublished() {
+        return published;
+    }
+
+    public void setPublished(Boolean published) {
+        this.published = published;
     }
 }
