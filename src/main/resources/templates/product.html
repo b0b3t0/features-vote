@@ -20,9 +20,12 @@
             </div>
         </div>
 
-        <div th:text="|Is product published: ${product.published}|"></div>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" th:field="${product.published}" />
+            <label class="custom-control-label" for="published1">Is published</label>
+        </div>
 
-        <button class="btn btn-primary">Save Product</button>
+        <button class="btn btn-primary btn-lg">Save Product</button>
     </form>
 </div>
 </body>
