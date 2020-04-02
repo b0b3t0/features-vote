@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -27,11 +28,6 @@ public class ProductController {
         this.productRepository = productRepository;
     }
 
-
-    @GetMapping("/products")
-    public String getProducts(ModelMap model) {
-        return "product";
-    }
 
     @GetMapping("/products/{productId}")
     public String getProduct(@PathVariable Long productId, ModelMap model, HttpServletResponse response) throws IOException {
