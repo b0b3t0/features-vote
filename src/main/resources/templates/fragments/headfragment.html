@@ -27,6 +27,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
+                <ul sec:authorize="isAuthenticated()" class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                </ul>
                 <div class="navbar-nav ml-auto">
                     <div sec:authorize="!isAuthenticated()">
                         <button class="btn btn-lg btn-primary" id="loginBtn">Log in</button>
