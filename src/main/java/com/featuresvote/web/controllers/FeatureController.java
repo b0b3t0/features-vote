@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/products/{productId}/featers")
+@RequestMapping("/products/{productId}/features")
 public class FeatureController {
 
     private final FeatureService featureService;
