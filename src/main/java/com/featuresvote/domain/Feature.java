@@ -7,10 +7,11 @@ import javax.persistence.*;
 public class Feature {
 
     private Long id;
-    private String tittle;
+    private String title;
     private String description;
     private String status;
     private Product product;
+    private User user;
 
     public Feature() {
 
@@ -28,11 +29,11 @@ public class Feature {
     }
 
     public String getTitle() {
-        return tittle;
+        return title;
     }
 
     public void setTitle(String tittle) {
-        this.tittle = tittle;
+        this.title = tittle;
     }
 
     public String getDescription() {
@@ -58,5 +59,14 @@ public class Feature {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    @ManyToOne 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

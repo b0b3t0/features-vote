@@ -2,6 +2,7 @@ package com.featuresvote.services;
 
 import com.featuresvote.domain.Feature;
 import com.featuresvote.domain.Product;
+import com.featuresvote.domain.User;
 import com.featuresvote.repositories.FeatureRepository;
 import com.featuresvote.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class FeatureService {
         this.productRepository = productRepository;
     }
 
-    public Feature createFeature(Long productId) {
+    public Feature createFeature(Long productId, User user) {
         Feature feature = new Feature();
         Optional<Product> productOpt = productRepository.findById(productId);
 
@@ -30,6 +31,9 @@ public class FeatureService {
 
             feature.setProduct(product);
             product.getFeatures().add(feature);
+
+            feature.setUser(user);
+            user.getFeatures().add(feature);
 
             feature.setStatus("Pending review");
             return featureRepository.save(feature);

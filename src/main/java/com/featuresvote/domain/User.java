@@ -14,6 +14,7 @@ public class User {
     private String name;
     private Set<Product> products = new HashSet<>();
     private Set<Authority> authorities = new HashSet<>();
+    private Set<Feature> features = new HashSet<>();
 
     public User() {
 
@@ -71,5 +72,14 @@ public class User {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
+    }
+
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "user")
+    public Set<Feature> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(Set<Feature> features) {
+        this.features = features;
     }
 }
