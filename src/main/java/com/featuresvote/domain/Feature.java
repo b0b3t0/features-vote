@@ -27,11 +27,11 @@ public class Feature {
         this.id = id;
     }
 
-    public String getTittle() {
+    public String getTitle() {
         return tittle;
     }
 
-    public void setTittle(String tittle) {
+    public void setTitle(String tittle) {
         this.tittle = tittle;
     }
 
