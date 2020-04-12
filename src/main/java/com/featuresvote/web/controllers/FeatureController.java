@@ -3,6 +3,7 @@ package com.featuresvote.web.controllers;
 import com.featuresvote.domain.Feature;
 import com.featuresvote.services.FeatureService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.codec.EncodingException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 @Controller
@@ -44,7 +48,14 @@ public class FeatureController {
     @PostMapping("{featureId}")
     public String updateFeature(Feature feature, @PathVariable Long productId, @PathVariable Long featureId) {
         feature = featureService.save(feature);
+        String encodedProductName;
 
-        return "redirect:/products/" + productId + "/features/" + feature.getId();
+        try {
+            encodedProductName = URLEncoder.encode(feature.getProduct().getName(), StandardCharsets.UTF_8);
+        } catch (EncodingException e) {
+            return "redirect:/dashboard";
+        }
+
+        return "redirect:/p/" + encodedProductName;
     }
 }
