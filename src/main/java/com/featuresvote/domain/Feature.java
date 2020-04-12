@@ -61,7 +61,7 @@ public class Feature {
         this.product = product;
     }
 
-    @ManyToOne 
+    @ManyToOne
     public User getUser() {
         return user;
     }
