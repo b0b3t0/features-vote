@@ -1,6 +1,8 @@
 package com.featuresvote.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "features")
@@ -12,6 +14,7 @@ public class Feature {
     private String status;
     private Product product;
     private User user;
+    private Set<Comment> comments = new HashSet<>();
 
     public Feature() {
 
@@ -68,5 +71,14 @@ public class Feature {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pk.feature")
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 }
