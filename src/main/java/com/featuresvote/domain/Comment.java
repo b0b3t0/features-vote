@@ -1,11 +1,16 @@
 package com.featuresvote.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id")
 public class Comment {
 
     private Long id;
@@ -40,6 +45,7 @@ public class Comment {
     }
 
     @ManyToOne
+    @JsonIgnore
     public User getUser() {
         return user;
     }
@@ -49,6 +55,7 @@ public class Comment {
     }
 
     @ManyToOne
+    @JsonIgnore
     public Feature getFeature() {
         return feature;
     }
@@ -68,6 +75,7 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "comment_id", nullable = true)
+    @JsonIgnore
     public Comment getComment() {
         return comment;
     }
